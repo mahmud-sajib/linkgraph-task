@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="dx-main">
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content">
+                            
+                                <h2 class="h4 text-center">All Articles</h2>
+                                <div class="table-responsive">
+                                    <table class="dx-table dx-table-default">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Writer</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for article in all_articles %}
+                                            <tr>
+                                                <td>{{ article.title }}</td>
+                                                <td>{{ article.written_by }}</td>
+                                                <td>{{ article.status }}</td>
+                                                <td>
+                                                    <form method="POST" action ="">
+                                                        {% csrf_token %}
+                                                        {% if article.status == "REJECTED" %}
+                                                        <input type="submit" value="Approve" name="APPROVED" class="form-control form-control-style-4">
+                                                        {% else %}
+                                                        <input type="submit" value="Reject" name="REJECTED" class="form-control form-control-style-4">
+                                                        {% endif %}
+                                                        <input type="hidden" name="id" value={{ article.id }}>
+                                                </form>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}                                 
+                                        </tbody>
+                                    </table>
+                                </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

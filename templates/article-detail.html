@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="dx-box-1 pb-100 bg-grey-6">
+    <div class="container">
+        <div class="row vertical-gap md-gap">
+            <div class="offset-lg-2 col-lg-8">
+                <div class="dx-blog-post dx-box dx-box-decorated">
+
+                    <div class="dx-blog-post-box">
+
+                        <h1 class="h3 dx-blog-post-title">{{ article.title }}</h1>
+                        <ul class="dx-blog-post-info">
+                            <li>Date Posted: {{ article.created_at }}</li>
+                            |
+                            <li>Written By: {{ article.written_by }}</li>
+                        </ul>
+                        <p class="mnb-2">{{ article.content }}</p>
+                    </div>
+
+                </div>
+               </div>
+            </div>
+    </div>
+</div>
+
+{% endblock content %}

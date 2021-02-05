@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="dx-main">
+    
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row vertical-gap md-gap">
+                <div class="offset-lg-2 col-lg-8">
+                    <div class="dx-box dx-box-decorated">
+                        <div class="dx-blog-post">
+                            <div class="dx-blog-post-box pt-30 pb-30">
+                                <h2 class="h4 mnt-5 mb-9 text-center">Home Dashboard</h2>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="dx-table dx-table-default">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Writer</th>
+                                            <th scope="col">Total Articles Written</th>
+                                            <th scope="col">Total Articles Written Last 30 days</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        {% for writer in writers_listing %}
+                                        <tr>
+                                            <th scope="row">
+                                                <p class="mb-0">{{ writer.name }}</p>
+                                            </th>
+                                            <td>{{ writer.total_articles }}</td>
+                                            <td>{{ writer.article_in_30_days }}</td>
+                                            
+                                        </tr>
+                                        {% endfor %} 
+                                         
+                                                                          
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dx-sticky dx-sidebar" data-sticky-offsetTop="120" data-sticky-offsetBot="40">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

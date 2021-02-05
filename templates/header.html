@@ -1,0 +1,113 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blog | LinkGraph</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700"
+        rel="stylesheet"><!-- %7c -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav
+        class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
+        <div class="container">
+
+            <a href="{% url 'index' %}" class="dx-nav-logo">
+                <h2 class="text-white" style="margin-top:0px; padding-top:10px; margin-bottom:0;">Toy Blog</h2>
+            </a>
+
+            
+            <button type="button" class="dx-navbar-burger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span style="color:white">Menu</span> </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'index' %}">Home</a>
+                
+            </div>
+
+            <div class="dx-navbar-content">
+
+                <ul class="dx-nav dx-nav-align-left">
+
+                    
+                    <li class="dx-drop-item">
+                        <a href="{% url 'index' %}">
+                            Home
+                        </a>
+                        
+                    </li>
+                    <li class="dx-drop-item">
+                        <a href="{% url 'article-create' %}">
+                            Create Article
+                        </a>
+                        
+                    </li>
+
+                    <li class="dx-drop-item">
+                        <a href="{% url 'article-approval' %}">
+                            Approve/Reject Article
+                        </a>
+                        
+                    </li>
+
+                    <li class="dx-drop-item">
+                        <a href="{% url 'articles-edited' %}">
+                            Editor Dashboard
+                        </a>
+                        
+                    </li>
+
+                    {% if not request.user.is_authenticated %}
+
+                    <li class="dx-drop-item">
+                        <a href="{% url 'register' %}">
+                            Register
+                        </a>
+                        
+                    </li>
+
+                    <li class="dx-drop-item">
+                        <a href="{% url 'login' %}">
+                            Login
+                        </a>
+                        
+                    </li>
+                    
+                    {% else %}
+
+                    <li class="dx-drop-item" style="color: white;">
+                        {{ request.user.writer.name }}
+                    </li>
+
+                    <li class="dx-drop-item">
+                        <a href="{% url 'logout' %}">
+                            Logout
+                        </a>
+                    </li>
+
+                    {% endif %}
+                   
+                </ul>
+
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
