@@ -20,10 +20,10 @@
 
 ## Project Demo
 
-### Article Approval Page
+### Home Dashboard Page
 
 <p>
-  <img src = "https://i.imgur.com/KEEgcj8.png" width=700>
+  <img src = "https://i.imgur.com/qYi8cWB.png" width=700>
 </p>
 
 ### Create Article Page
@@ -32,16 +32,22 @@
   <img src = "https://i.imgur.com/ylijQUe.png" width=700>
 </p>
 
+### Article Update Page
+
+<p>
+  <img src = "https://i.imgur.com/bKHmOo4.png" width=700>
+</p>
+
 ### Article Detail Page
 
 <p>
   <img src = "https://i.imgur.com/8yh19iB.png" width=700>
 </p>
 
-### Article Update Page
+### Article Approval Page
 
 <p>
-  <img src = "https://i.imgur.com/bKHmOo4.png" width=700>
+  <img src = "https://i.imgur.com/KEEgcj8.png" width=700>
 </p>
 
 ### Article Edited Page
@@ -50,21 +56,15 @@
   <img src = "https://i.imgur.com/B4KxfXw.png" width=700>
 </p>
 
-### Home Dashboard Page
+### SignUp Page
 
 <p>
-  <img src = "https://i.imgur.com/qYi8cWB.png" width=700>
+  <img src = "https://i.imgur.com/d49zPir.png" width=700>
 </p>
 
 ### Login Page
 
 <p>
   <img src = "https://i.imgur.com/wm8GlvZ.png" width=700>
-</p>
-
-### SignUp Page
-
-<p>
-  <img src = "https://i.imgur.com/d49zPir.png" width=700>
 </p>
 
